@@ -20,6 +20,23 @@ async def init(create_db):
     )
 ```
 
+使用models统一管理,在__init__ 中处理,
+```python
+from .blog import Post, Tag, PostTag
+from .comment import Comment
+from .react import ReactItem
+```
+
+相应的配置可以改写为models, 后期models中引用可以直接导入
+```python
+async def init(create_db):
+    await Tortoise.init(
+        db_url=DB_URL,
+        modules={'models': ['models']},
+        _create_db=create_db
+    )
+```
+
 ### ipython中测试
 
 ipython中直接使用await获取数据

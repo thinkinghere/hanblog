@@ -1,13 +1,13 @@
 import click
 from tortoise import Tortoise, run_async
 
-from ext import init as _init
+from ext import init_db
 
 
 async def init():
-    await _init(create_db=False)
+    await init_db(create_db=False)
     await Tortoise._drop_databases()
-    await _init(create_db=True)
+    await init_db(create_db=True)
     await Tortoise.generate_schemas()
 
 
