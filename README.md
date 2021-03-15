@@ -1,4 +1,7 @@
 # hanblog
+## 环境
+
+python3.7.1
 
 ## 使用click的group 和subommand 实现命令行
 
