@@ -10,8 +10,8 @@ bp = Blueprint('views')
 @mako.template('index.html')
 async def index(request):
     # print(request.args)
-    # name = request.args.get('title', 'World')
-    name = "world"
-    post = await Post.create(title=name)
-    print(await Post.filter(title=name).first())
+    name = request.args.get('title', 'World')
+    # 在有与数据库的交互的地方使用await
+    post = await Post.create(title=name)  # 插入数据库
+    print(await Post.filter(title=name).first())  # 从数据库中获取第一条展示
     return {'post': post}

@@ -133,3 +133,6 @@ dmypy.json
 config.py
 
 local_settings.py
+
+.DS_Store
+uikit-webpack
