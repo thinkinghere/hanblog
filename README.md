@@ -53,3 +53,45 @@ Out[8]: []
 In [9]: Post.all()
 Out[9]: <tortoise.queryset.QuerySet at 0x1f5ea1f38b0>
 ```
+
+### 前端项目UIKit
+
+UIKit使用webpack打包 https://getuikit.com/docs/webpack
+
+webpack.config.js中指定了src下面的js文件作为webpack打包的原始js文件
+
+#### 使用yarn安装依赖
+
+```yarn install ```
+
+会在项目目录生成node_modules文件
+
+#### dev 开发模式
+
+```yarn run start``` 
+
+会在static/dist下生成打包的文件
+
+
+#### templates
+
+在模板中使用Mako的语法
+```angular2html
+<%inherit file="base.html" />  # base.html作为模板使用，注意路径
+<%def name="bottom_script()">  # 定义该模板的函数名字为bottom_script
+    # url_for 会拼接路径
+    <script src="${ app.url_for('static', filename='dist/admin/base.js') }"></script>
+</%def>
+```
+
+在body中引入并使用
+```html
+${ self.bottom_script() }
+```
+
+最后执行的脚本
+```angular2html
+
+<%def name="bottom_script()">
+</%def>
+```

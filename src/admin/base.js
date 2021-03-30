@@ -5,4 +5,4 @@ import Icons from 'uikit/dist/js/uikit-icons';
 UIkit.use(Icons);
 
 // components can be called from the imported UIkit reference
-UIkit.notification('Hello world. ');  // 通知
+UIkit.notification('123 Hello world. 123 haha');  // 通知

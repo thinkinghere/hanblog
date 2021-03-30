@@ -136,3 +136,4 @@ local_settings.py
 
 .DS_Store
 uikit-webpack
+node_modules
