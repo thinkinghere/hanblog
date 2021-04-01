@@ -1,4 +1,6 @@
+<!--继承base.html-->
 <%inherit file="base.html" />
+<!-- 定义Mako的函数,函数名为bottom_script-->
 <%def name="bottom_script()">
     <script src="${ app.url_for('static', filename='dist/admin/base.js') }"></script>
 </%def>

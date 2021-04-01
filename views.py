@@ -7,9 +7,9 @@ bp = Blueprint('views')
 
 
 @bp.route('/')
-@mako.template('index.html')
+@mako.template('index.html')  # 渲染index.html
 async def index(request):
-    # print(request.args)
+    # print(">>>>>>>>>>>", request.args)
     name = request.args.get('title', 'World')
     # 在有与数据库的交互的地方使用await
     post = await Post.create(title=name)  # 插入数据库
