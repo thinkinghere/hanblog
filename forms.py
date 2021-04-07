@@ -40,6 +40,20 @@ class SanicForm(_SanicForm):
 
 
 class LoginForm(SanicForm):
+    """
+    登陆表单
+    """
     name = StringField('Name', validators=[DataRequired()])
     password = PasswordField('Password', validators=[DataRequired()])
     submit = SubmitField('Sign In')
+
+
+class UserForm(SanicForm):
+    """
+    用户表单
+    """
+    name = StringField('Name', validators=[DataRequired()])
+    email = StringField('Email', validators=[DataRequired()])
+    password = PasswordField('Password')
+    active = BooleanField('Active')
+    submit = SubmitField('Submit')

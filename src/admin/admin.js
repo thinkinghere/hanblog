@@ -10,3 +10,9 @@ if ($error) {
     timeout: 1000
   });
 }
+
+// 点击切换tab
+$('.uk-tab a').on('click', (event)  => {
+  let $this = $(event.currentTarget)[0];
+  window.location.replace($this.href);
+});
