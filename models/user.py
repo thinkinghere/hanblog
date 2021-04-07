@@ -14,6 +14,16 @@ class User(BaseModel):
         table = 'users'
 
 
+async def create_user(**data):
+    if 'name' not in data or 'password' not in data:
+        raise ValueError('username and password are required.')
+
+    data['password'] = generate_password(data.pop('password'))
+
+    user = await User.create(**data)
+    return user
+
+
 def generate_password(password):
     """
     生成Hash密码

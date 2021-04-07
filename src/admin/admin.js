@@ -1,4 +1,4 @@
-import base from "./base";
+import UIkit from './base'; // 引入base
 
 let $error = $('meta[name=error]').attr('content');
 

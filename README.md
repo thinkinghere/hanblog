@@ -95,3 +95,10 @@ ${ self.bottom_script() }
 <%def name="bottom_script()">
 </%def>
 ```
+
+### 创建用户
+
+```python
+python manage.py --help
+python manage.py adduser --name=admin --email=123@123.com
+```

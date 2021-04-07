@@ -1,9 +1,10 @@
 from tortoise import Tortoise
 from sanic_mako import SanicMako
-
+from sanic_auth import Auth
 from config import DB_URL
 
 mako = SanicMako()
+auth = Auth()
 
 
 async def init_db(create_db=False):
